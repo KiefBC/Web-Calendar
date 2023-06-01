@@ -10,7 +10,10 @@ parser.add_argument('event', type=str, help='The event name is required!', requi
 
 class WebCalendar(Resource):
     def get(self):
-        return {'data': 'There are no events for today!'}, 200
+        response_obj = {
+            'data': 'There are no events for today!'
+        }
+        return make_response(response_obj, 200)
 
     def post(self):
         args = parser.parse_args()
@@ -22,5 +25,4 @@ class WebCalendar(Resource):
             'event': name,
             'date': str(date_.date()),
         }
-        response = make_response(response_obj, 200)
-        return response
+        return make_response(response_obj, 200)
