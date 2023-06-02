@@ -89,4 +89,4 @@ fabric.properties
 # Typical Hyperskill Files
 /test/
 /tests.py
-__pycache__
+__pycache__/
