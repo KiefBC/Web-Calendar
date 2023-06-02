@@ -52,7 +52,7 @@ class WebCalendarByID(Resource):
             event_response = WebCalendarDao(event=event_by_id.event, date=event_by_id.date, event_id=event_by_id.id)
             return event_response
         else:
-            return abort(404, "The event doesn't exist!")
+            abort(404, "The event doesn't exist!")
 
     @staticmethod
     def delete(event_id):
